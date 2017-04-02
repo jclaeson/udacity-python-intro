@@ -1,0 +1,6 @@
+import turtle
+
+def draw_tri(size):
+    #stub
+
+

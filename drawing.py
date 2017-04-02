@@ -7,27 +7,32 @@ def draw_shapes():
     brad = turtle.Turtle()
     brad.shape("circle")
     brad.color("red")
-    brad.speed(2)
-    i=0
-    while i < 4:
-        brad.forward(200)
-        brad.left(90)
-        i += 1
+    brad.speed(100)
 
-    angie = turtle.Turtle()
-    angie.color("blue")
-    angie.circle(200)
+    for z in range(0,72):
 
-    harry = turtle.Turtle()
-    harry.color("purple")
-    harry.shape("triangle")
+        i=0
+        while i < 4:
+            brad.forward(200)
+            brad.left(90)
+            i += 1
 
-    i = 0
+        brad.left(5)
 
-    while i < 3:
-        harry.forward(200)
-        harry.right(120)
-        i += 1
+    #angie = turtle.Turtle()
+    #angie.color("blue")
+    #angie.circle(200)
+
+    #harry = turtle.Turtle()
+    #harry.color("purple")
+    #harry.shape("triangle")
+
+    #i = 0
+
+    #while i < 3:
+    #    harry.forward(200)
+    #    harry.right(120)
+    #    i += 1
 
     window.exitonclick()
 
