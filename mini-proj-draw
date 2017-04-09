@@ -1,6 +1,76 @@
 import turtle
+import numpy
 
-def draw_tri(size):
-    #stub
+def draw_tri(tri,size,fill):
+    if fill:
+        tri.fill(True)
+        tri.color("red", "red")
+    for i in range(3):
+        tri.forward(size)
+        tri.left(120)
+    if fill:
+        tri.fill(False)
+
+def draw_med(fractal):
+    draw_tri(fractal, 100, False)
+    draw_tri(fractal, 50, True)
+    fractal.forward(50)
+    draw_tri(fractal, 50, True)
+    fractal.left(120)
+    fractal.forward(50)
+    fractal.right(120)
+    draw_tri(fractal, 50, True)
+
+def draw_large(fractal):
+    draw_tri(fractal, 200, False)
+    draw_med(fractal)
+    fractal.left(60)
+    fractal.forward(50)
+    fractal.right(60)
+    draw_med(fractal)
+    fractal.forward(50)
+    fractal.right(60)
+    fractal.forward(150)
+    fractal.right(120)
+    fractal.forward(100)
+    fractal.right(180)
+    draw_med(fractal)
+
+def fractalize():
+    window = turtle.Screen()
+    window.bgcolor("cyan")
+    fractal = turtle.Turtle()
+    fractal.penup()
+    fractal.setx(-200)
+    fractal.sety(-200)
+    fractal.pendown()
+    fractal.speed(100)
+
+    fractal.color("red")
+
+    #outside triangle
+    draw_tri(fractal, 400, False)
+
+    draw_large(fractal)
+    fractal.forward(50)
+    fractal.right(60)
+    fractal.forward(50)
+    fractal.left(60)
+    draw_large(fractal)
+    fractal.forward(50)
+    fractal.left(120)
+    fractal.forward(150)
+    fractal.left(60)
+    fractal.forward(200)
+    fractal.right(180)
+    draw_large(fractal)
+
+    fractal.hideturtle()
+    window.exitonclick()
+
+fractalize()
+
+
+
 
 
