@@ -1,10 +1,10 @@
 import turtle
-import numpy
+import random
 
 def draw_tri(tri,size,fill):
     if fill:
         tri.fill(True)
-        tri.color("red", "red")
+        tri.fillcolor((random.randint(0,255),random.randint(0,255),random.randint(0,255)))
     for i in range(3):
         tri.forward(size)
         tri.left(120)
@@ -38,13 +38,14 @@ def draw_large(fractal):
 
 def fractalize():
     window = turtle.Screen()
-    window.bgcolor("cyan")
+    window.bgcolor("black")
+    window.colormode(255)
     fractal = turtle.Turtle()
     fractal.penup()
     fractal.setx(-200)
     fractal.sety(-200)
     fractal.pendown()
-    fractal.speed(100)
+    fractal.speed(10)
 
     fractal.color("red")
 
